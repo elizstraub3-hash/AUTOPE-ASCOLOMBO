@@ -1144,6 +1144,135 @@ img { max-width: 100%; }
 }
 .bh-sub { font-size: 11px; color: #888; }
 
+/* Urio logo text in banner */
+.urio-icon {
+  font-size: unset !important;
+  animation: none !important;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+  border: 2px solid #00aacc;
+  border-radius: 8px;
+  padding: 12px 20px;
+  flex-shrink: 0;
+}
+.urio-logo-text {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #00ccee, #007aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Urio fake battery visual */
+.urio-img-wrap {
+  background: #0a0a0a !important;
+  color: unset !important;
+  padding: 16px;
+  font-size: unset !important;
+}
+.urio-fake-battery {
+  width: 130px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,170,220,.3);
+  border: 1px solid #00aacc55;
+}
+.ufb-top {
+  height: 14px;
+  background: #111;
+  border-bottom: 2px solid #00aacc;
+}
+.ufb-body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #001a2e 60%, #003355 100%);
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.ufb-body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -40%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 30%, rgba(0,170,220,.18) 60%, transparent 80%);
+  transform: skewX(-20deg);
+}
+.ufb-brand {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #00ccee, #007aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+}
+.ufb-spec {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.7);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Urio card border */
+.urio-card { border: 2px solid transparent !important; }
+.urio-card:hover { border-color: #00aacc !important; box-shadow: 0 6px 24px rgba(0,170,220,.2) !important; }
+
+.urio-brand { color: #0099bb !important; }
+
+.btn-urio { background: #0088aa !important; }
+.btn-urio:hover { background: #006688 !important; }
+
+/* Urio 60Ah promo card */
+.urio-promo-card { position: relative; }
+.urio-promo-ribbon {
+  position: absolute;
+  top: 18px;
+  right: -8px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 14px 4px 10px;
+  letter-spacing: 1px;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 8px 50%);
+}
+.ufb-garantia {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(0,200,230,.8);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.urio-garantia-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #e6f9ff;
+  border: 1px solid #0099bb;
+  color: #006688;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
 /* Battery cards */
 .battery-card { border: 2px solid transparent; }
 .battery-card:hover { border-color: var(--orange); }
