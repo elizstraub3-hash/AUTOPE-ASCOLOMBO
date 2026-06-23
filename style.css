@@ -1350,6 +1350,7 @@ img { max-width: 100%; }
   align-items: center;
   gap: 6px;
 }
+.map-wrap { margin-top: 16px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
 .hours-table { width: 100%; border-collapse: collapse; }
 .hours-table td {
   padding: 8px 4px;
