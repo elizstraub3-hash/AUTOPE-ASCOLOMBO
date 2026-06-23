@@ -53,7 +53,7 @@
             <i class="far fa-heart"></i>
             <span>Lista de<br><strong>Desejos</strong></span>
           </a>
-          <a href="#" class="cart-btn">
+          <a href="#" class="cart-btn" onclick="openCart(); return false;">
             <div class="cart-icon-wrap">
               <i class="fas fa-shopping-cart"></i>
               <span class="cart-count">0</span>
@@ -361,11 +361,16 @@
               <span>Entregue sua bateria velha e saia com a Urio instalada na hora!</span>
             </div>
             <div class="bmc-btns">
-              <a href="https://wa.me/5541999990000" class="btn-orange" target="_blank">
-                <i class="fab fa-whatsapp"></i> PEDIR PELO WHATSAPP
-              </a>
-              <a href="tel:4133330000" class="btn-dark">
-                <i class="fas fa-phone"></i> LIGAR AGORA
+              <div class="qty-selector">
+                <button onclick="changeQty('qty-bateria', -1)">−</button>
+                <input type="number" id="qty-bateria" value="1" min="1" max="99" />
+                <button onclick="changeQty('qty-bateria', 1)">+</button>
+              </div>
+              <button class="btn-orange" onclick="addToCart('Bateria Urio 60Ah — Base de Troca', 350.00, 'img/bateria-urio.png', 'qty-bateria')">
+                <i class="fas fa-cart-plus"></i> ADICIONAR AO CARRINHO
+              </button>
+              <a href="https://wa.me/5541999990000" class="btn-dark" target="_blank">
+                <i class="fab fa-whatsapp"></i> WHATSAPP
               </a>
             </div>
           </div>
@@ -491,9 +496,19 @@
             <i class="fas fa-exclamation-triangle"></i>
             <span>Veículos modernos (após 2010) geralmente requerem óleo sintético 5W30 ou 0W20. <strong>Consulte o manual do seu veículo ou fale conosco!</strong></span>
           </div>
-          <a href="https://wa.me/5541999990000?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20óleo%2015W40" class="btn-orange" target="_blank">
-            <i class="fab fa-whatsapp"></i> TIRAR DÚVIDAS NO WHATSAPP
-          </a>
+          <div class="oil-buy-row">
+            <div class="qty-selector">
+              <button onclick="changeQty('qty-oleo',  -1)">−</button>
+              <input type="number" id="qty-oleo" value="1" min="1" max="99" />
+              <button onclick="changeQty('qty-oleo', 1)">+</button>
+            </div>
+            <button class="btn-add-cart-oil" onclick="addToCart('Óleo Mobil Super 15W40 Semissintético', 33.90, 'img/oleo-mobil-15w40.webp', 'qty-oleo')">
+              <i class="fas fa-cart-plus"></i> ADICIONAR AO CARRINHO
+            </button>
+            <a href="https://wa.me/5541999990000?text=Olá!%20Quero%20comprar%20o%20Óleo%20Mobil%2015W40%20Semissintético%20R%2433%2C90" class="btn-wa-oil" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -648,5 +663,34 @@
   </button>
 
   <script src="script.js"></script>
+  <!-- CARRINHO LATERAL -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fas fa-shopping-cart"></i> Meu Carrinho</h3>
+      <button class="cart-close" onclick="closeCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Seu carrinho está vazio</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>Subtotal:</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <div class="cart-pix-total">
+        <i class="fas fa-qrcode"></i>
+        <span>No PIX (5% OFF): <strong id="cartTotalPix">R$ 0,00</strong></span>
+      </div>
+      <a href="https://wa.me/5541999990000" id="cartWhatsapp" class="btn-orange cart-whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> FINALIZAR PELO WHATSAPP
+      </a>
+      <button class="btn-clear-cart" onclick="clearCart()"><i class="fas fa-trash"></i> Limpar Carrinho</button>
+    </div>
+  </div>
+
 </body>
 </html>
