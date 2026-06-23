@@ -1275,28 +1275,63 @@ img { max-width: 100%; }
   box-shadow: 0 6px 28px rgba(255,0,0,.08);
 }
 
-.oil-icon-wrap {
+.oil-img-wrap {
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background: var(--dark);
-  border-radius: 12px;
-  padding: 28px 22px;
-  min-width: 110px;
+  width: 220px;
+  position: relative;
+  text-align: center;
 }
-.oil-icon-wrap i {
-  font-size: 44px;
+.oil-product-img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--white);
+  transition: transform .3s;
+}
+.oil-card:hover .oil-product-img { transform: scale(1.04); }
+.oil-price-tag {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--orange);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(255,0,0,.3);
+}
+
+.oil-brand-label {
+  font-size: 11px;
+  font-weight: 700;
   color: var(--orange);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
-.oil-viscosity {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  color: var(--white);
-  letter-spacing: 1px;
+.oil-price-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  background: var(--bg);
+  padding: 14px 18px;
+  border-radius: 8px;
+  border-left: 4px solid var(--orange);
 }
+.oil-price-main {
+  font-size: 32px;
+  color: var(--dark);
+  font-weight: 400;
+  line-height: 1;
+}
+.oil-price-main strong { font-weight: 900; }
+.oil-price-inst { font-size: 12px; color: var(--gray); }
+.oil-price-pix { font-size: 12px; color: var(--green); font-weight: 600; }
 
 .oil-info { flex: 1; }
 .oil-info h3 {
@@ -1845,7 +1880,8 @@ img { max-width: 100%; }
   .battery-main-card { flex-direction: column; }
   .bmc-img { width: 200px; }
   .battery-features { grid-template-columns: repeat(2, 1fr); }
-  .oil-card { flex-direction: column; }
+  .oil-card { flex-direction: column; align-items: center; }
+  .oil-img-wrap { width: 180px; }
   .oil-cars-grid { grid-template-columns: 1fr; }
 }
   .header-inner { flex-wrap: wrap; }
