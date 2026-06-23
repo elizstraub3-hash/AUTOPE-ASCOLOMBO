@@ -1042,6 +1042,161 @@ img { max-width: 100%; }
 }
 .brand-pill:hover { border-color: var(--orange); color: var(--orange); }
 
+/* ========== BATTERY SECTION ========== */
+.battery-section {
+  padding: 50px 0;
+  background: var(--bg);
+}
+.battery-page { margin-top: 30px; }
+
+/* Card único principal */
+.battery-main-card {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  border: 2px solid var(--border);
+  position: relative;
+  margin-bottom: 30px;
+  transition: box-shadow .2s;
+}
+.battery-main-card:hover { box-shadow: 0 8px 40px rgba(255,0,0,.1); border-color: var(--orange); }
+
+.bmc-badge {
+  position: absolute;
+  top: 20px; left: 20px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: .5px;
+}
+.bmc-img {
+  flex-shrink: 0;
+  width: 300px;
+  text-align: center;
+}
+.bmc-img img {
+  width: 100%;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.15));
+  transition: transform .3s;
+}
+.battery-main-card:hover .bmc-img img { transform: scale(1.04) rotate(-2deg); }
+
+.bmc-info { flex: 1; }
+.bmc-brand {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0099bb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.bmc-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--dark);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.bmc-stars {
+  color: #f4a623;
+  font-size: 16px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.bmc-stars span { font-size: 12px; color: var(--gray-light); margin-left: 4px; }
+.bmc-garantia {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #e6f9ff;
+  border: 1px solid #0099bb;
+  color: #006688;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.bmc-price-box {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.bmc-label { font-size: 12px; color: var(--gray-light); display: block; margin-bottom: 4px; }
+.bmc-price {
+  font-size: 42px;
+  color: var(--dark);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.bmc-price strong { font-weight: 900; }
+.bmc-install { font-size: 13px; color: var(--gray); margin-bottom: 6px; }
+.bmc-pix { font-size: 13px; color: var(--green); font-weight: 600; }
+.bmc-troca-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff5f5;
+  border-left: 4px solid var(--orange);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--dark);
+}
+.bmc-troca-info i { color: var(--orange); font-size: 18px; flex-shrink: 0; }
+.bmc-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.bmc-btns .btn-orange, .bmc-btns .btn-dark {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  transition: opacity .2s, transform .15s;
+}
+.bmc-btns .btn-orange:hover, .bmc-btns .btn-dark:hover { opacity: .9; transform: translateY(-1px); }
+
+/* Diferenciais */
+.battery-features {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.bf-item {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 22px 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: border-color .2s, box-shadow .2s;
+}
+.bf-item:hover { border-color: var(--orange); box-shadow: 0 4px 16px rgba(255,0,0,.08); }
+.bf-item i {
+  font-size: 28px;
+  color: var(--orange);
+  margin-bottom: 10px;
+  display: block;
+}
+.bf-item strong { display: block; font-size: 13px; color: var(--dark); margin-bottom: 6px; }
+.bf-item p { font-size: 11px; color: var(--gray-light); line-height: 1.4; }
+
 /* ========== URIO BRAND SHOWCASE ========== */
 .urio-brand-showcase {
   display: flex;
@@ -1553,6 +1708,9 @@ img { max-width: 100%; }
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1100px) {
+  .battery-features { grid-template-columns: repeat(3, 1fr); }
+  .bmc-img { width: 220px; }
+}
   .categories-grid { grid-template-columns: repeat(5, 1fr); }
   .products-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
@@ -1570,6 +1728,10 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 768px) {
+  .battery-main-card { flex-direction: column; }
+  .bmc-img { width: 200px; }
+  .battery-features { grid-template-columns: repeat(2, 1fr); }
+}
   .header-inner { flex-wrap: wrap; }
   .search-wrap { order: 3; flex: 100%; max-width: 100%; }
   .categories-grid { grid-template-columns: repeat(4, 1fr); }
