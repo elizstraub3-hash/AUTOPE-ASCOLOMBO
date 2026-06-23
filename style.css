@@ -1042,6 +1042,62 @@ img { max-width: 100%; }
 }
 .brand-pill:hover { border-color: var(--orange); color: var(--orange); }
 
+/* ========== URIO BRAND SHOWCASE ========== */
+.urio-brand-showcase {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #040e18 100%);
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 24px;
+  border: 1px solid #00aacc33;
+  box-shadow: 0 8px 40px rgba(0,170,220,.1);
+}
+.ubs-img {
+  flex-shrink: 0;
+  width: 220px;
+}
+.ubs-img img {
+  width: 100%;
+  filter: drop-shadow(0 10px 30px rgba(0,170,220,.4));
+  animation: battery-float 3s ease-in-out infinite;
+}
+.ubs-info { flex: 1; }
+.ubs-logo {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  background: linear-gradient(180deg, #ffffff 0%, #00ccee 60%, #0099bb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.ubs-info p {
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.ubs-info strong { color: #fff; }
+.ubs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.ubs-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  font-size: 14px;
+}
+.ubs-list li i { color: #00aacc; }
+
 /* ========== PAYMENT ========== */
 .payment-section {
   padding: 40px 0;
