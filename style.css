@@ -2,9 +2,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --orange: #f47920;
-  --orange-dark: #d4650e;
-  --orange-light: #ff9a3c;
+  --orange: #ff0000;
+  --orange-dark: #cc0000;
+  --orange-light: #ff3333;
   --black: #111111;
   --dark: #1e1e1e;
   --dark2: #2d2d2d;
@@ -14,7 +14,7 @@
   --bg: #f5f5f5;
   --white: #ffffff;
   --green: #27ae60;
-  --red: #e74c3c;
+  --red: #cc0000;
 }
 
 html { scroll-behavior: smooth; }
@@ -1095,6 +1095,86 @@ img { max-width: 100%; }
 }
 .back-top:hover { background: var(--orange); }
 .back-top.show { display: flex; }
+
+/* ========== BATTERY HIGHLIGHT BANNER ========== */
+.battery-highlight-banner {
+  background: linear-gradient(135deg, var(--dark) 0%, #2d0000 100%);
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.bh-icon {
+  font-size: 52px;
+  color: var(--orange);
+  flex-shrink: 0;
+  animation: pulse-battery 2s infinite;
+}
+@keyframes pulse-battery {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+.bh-text { flex: 1; }
+.bh-text h3 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.bh-text p { color: #bbb; font-size: 13px; }
+.bh-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.bh-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+.bh-valor {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+}
+.bh-sub { font-size: 11px; color: #888; }
+
+/* Battery cards */
+.battery-card { border: 2px solid transparent; }
+.battery-card:hover { border-color: var(--orange); }
+.battery-img {
+  background: #fff5f5 !important;
+  color: var(--orange) !important;
+}
+.badge-hot {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 2px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.prod-troca {
+  font-size: 11px;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1100px) {
